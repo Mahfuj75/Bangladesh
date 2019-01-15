@@ -1,0 +1,106 @@
+[
+  {
+    "Chapter": "প্রস্তাবনা",
+    "Chapter_Id" : 0,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "প্রথম ভাগ : প্রজাতন্ত্র",
+    "Chapter_Id" : 1,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "দ্বিতীয় ভাগ : রাষ্ট্র পরিচালনার মূলনীতি",
+    "Chapter_Id" : 2,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "তৃতীয় ভাগ : মৌলিক অধিকার",
+    "Chapter_Id" : 3,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "চতুর্থ ভাগ : নির্বাহী বিভাগ",
+    "Chapter_Id" : 4,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "পঞ্চম ভাগ : আইনসভা",
+    "Chapter_Id" : 5,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "ষষ্ঠ ভাগ : বিচারবিভাগ",
+    "Chapter_Id" : 6,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "সপ্তম ভাগ : নির্বাচন",
+    "Chapter_Id" : 7,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "অষ্টম ভাগ : মহা হিসাব-নিরীক্ষক ও নিয়ন্ত্রক",
+    "Chapter_Id" : 8,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "নবম ভাগ : বাংলাদেশের কর্মবিভাগ",
+    "Chapter_Id" : 9,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "দশম ভাগ : সংবিধান-সংশোধন",
+    "Chapter_Id" : 10,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "একাদশ ভাগ : বিবিধ",
+    "Chapter_Id" : 11,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  },
+  {
+    "Chapter": "সংবিধান সংশোধন",
+    "Chapter_Id" : 12,
+    "Text_Size" : 12,
+    "Style" : "Bold",
+    "Text_color" : "Black"
+
+  }
+]

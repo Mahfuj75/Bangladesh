@@ -3,17 +3,40 @@ package com.mrk.mahfuj.bangladeshsonbidhan
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_chapter.*
 
 class ChapterActivity : AppCompatActivity() {
+    val chapters = arrayListOf<Charsets>()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chapter)
         setSupportActionBar(toolbar)
+        val myDataSet = arrayOf("প্রস্তাবনা","প্রথম ভাগ : প্রজাতন্ত্র","দ্বিতীয় ভাগ : রাষ্ট্র পরিচালনার মূলনীতি","তৃতীয় ভাগ : মৌলিক অধিকার","চতুর্থ ভাগ : নির্বাহী বিভাগ")
+        viewManager = LinearLayoutManager(this)
+        viewAdapter = MyAdapter(myDataSet)
+
+        recyclerView = findViewById<RecyclerView>(R.id.my_recycler_view).apply {
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = viewManager
+
+            // specify an viewAdapter (see also next example)
+            adapter = viewAdapter
+
+        }
+
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

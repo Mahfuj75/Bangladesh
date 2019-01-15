@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Bangladesh Sonbidhan</string>
     <string name="action_settings">Settings</string>
-
-    <string-array name="Chapters">
-        <item>প্রস্তাবনাপ্রস্তাবনা</item>
-    </string-array>
     <string name="title_activity_chapter_zero">ChapterZeroActivity</string>
 </resources>
