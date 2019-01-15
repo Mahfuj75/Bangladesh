@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <android.support.design.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            card_view:cardElevation="10dp"
+            card_view:cardCornerRadius="10dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+            <TextView
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="গণপ্রজাতন্ত্রী বাংলাদেশের সংবিধান"
+                    android:textSize="20sp"
+                    android:textFontWeight="bold"
+                    android:fontFamily="serif"
+                    android:paddingBottom="@dimen/padding_top_bottom"
+                    android:paddingTop="@dimen/padding_top_bottom"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_green_dark"
+            />
+            <TextView
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="বিস্‌মিল্লাহির-রহ্‌মানির রহিম"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="5dp"
+                    android:textFontWeight="bold"
+                    android:fontFamily="serif"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@android:color/black"
+            />
+            <TextView
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="(দয়াময়, পরম দয়ালু, আল্লাহের নামে)/
+(পরম করুণাময় সৃষ্টিকর্তার নামে।)"
+                    android:textSize="14sp"
+                    android:textFontWeight="bold"
+                    android:fontFamily="serif"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@android:color/black"
+            />
+            <TextView
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="প্রস্তাবনা"
+                    android:textSize="20sp"
+                    android:textFontWeight="bold"
+                    android:fontFamily="serif"
+                    android:paddingBottom="@dimen/padding_top_bottom"
+                    android:paddingTop="@dimen/padding_top_bottom"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+            />
+
+        </LinearLayout>
+
+
+    </android.support.design.card.MaterialCardView>
+
+
+</LinearLayout>
