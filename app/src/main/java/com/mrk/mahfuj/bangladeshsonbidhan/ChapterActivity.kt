@@ -9,6 +9,12 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_chapter.*
+import java.io.IOException
+import java.lang.Exception
+import org.json.JSONException
+import org.json.JSONObject
+import java.nio.charset.Charset
+
 
 class ChapterActivity : AppCompatActivity() {
     val chapters = arrayListOf<Charsets>()
@@ -20,7 +26,8 @@ class ChapterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chapter)
         setSupportActionBar(toolbar)
-        val myDataSet = arrayOf("প্রস্তাবনা","প্রথম ভাগ : প্রজাতন্ত্র","দ্বিতীয় ভাগ : রাষ্ট্র পরিচালনার মূলনীতি","তৃতীয় ভাগ : মৌলিক অধিকার","চতুর্থ ভাগ : নির্বাহী বিভাগ")
+        //val myDataSet = arrayOf("প্রস্তাবনা","প্রথম ভাগ : প্রজাতন্ত্র","দ্বিতীয় ভাগ : রাষ্ট্র পরিচালনার মূলনীতি","তৃতীয় ভাগ : মৌলিক অধিকার","চতুর্থ ভাগ : নির্বাহী বিভাগ")
+        val myDataSet = parseJson(loadJson())
         viewManager = LinearLayoutManager(this)
         viewAdapter = MyAdapter(myDataSet)
 
@@ -38,11 +45,15 @@ class ChapterActivity : AppCompatActivity() {
         }
 
 
+
+
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -58,5 +69,63 @@ class ChapterActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun loadJSONFromAsset(): String {
+        var json: String? = ""
+        try {
+            val inputStream = assets.open("yourfilename.json")
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
+            inputStream.read(buffer)
+            inputStream.close()
+            json = String(buffer)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return json!!
+        }
+
+        return json
+    }
+    private fun loadJson(): String{
+        var json :String = ""
+        try {
+            val input = assets.open("Chapters.Json")
+            val size =input.available()
+            val buffer = ByteArray(size)
+            input.read(buffer)
+            input.close()
+            json =  String(buffer, Charset.defaultCharset())
+        }
+        catch (ex:Exception)
+        {
+            ex.printStackTrace()
+        }
+        return json
+    }
+    private fun parseJson(value:String): ArrayList<Chapter> {
+        val chapterList = ArrayList<Chapter>()
+        try {
+            val obj = JSONObject(value)
+            val jsonArray = obj.getJSONArray("Chapters")
+
+
+            for (i in 0 until jsonArray.length()) {
+                val jsonObject = jsonArray.getJSONObject(i)
+                val chapter = Chapter(jsonObject.getString("Chapter")
+                    ,jsonObject.getInt("Chapter_Id")
+                    ,jsonObject.getInt("Text_Size")
+                    ,jsonObject.getString("Style")
+                    ,jsonObject.getString("Text_color"))
+                chapterList.add(chapter)
+
+
+            }
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+
+
+        return chapterList
     }
 }

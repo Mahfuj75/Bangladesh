@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.chapter_list_item.view.*
 
-class MyAdapter(val chapters: Array<String>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(val chapters: ArrayList<Chapter>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ViewHolder {
@@ -16,7 +16,7 @@ class MyAdapter(val chapters: Array<String>) : RecyclerView.Adapter<MyAdapter.Vi
 
     //this method is binding the data on the list
     override fun onBindViewHolder(holder: MyAdapter.ViewHolder, position: Int) {
-        holder.bindItems(chapters[position])
+        holder.bindItems(chapters[position].ChapterContent)
     }
 
     //this method is giving the size of the list
