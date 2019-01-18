@@ -17,7 +17,6 @@ import java.nio.charset.Charset
 
 
 class ChapterActivity : AppCompatActivity() {
-    val chapters = arrayListOf<Charsets>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
@@ -26,7 +25,6 @@ class ChapterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chapter)
         setSupportActionBar(toolbar)
-        //val myDataSet = arrayOf("প্রস্তাবনা","প্রথম ভাগ : প্রজাতন্ত্র","দ্বিতীয় ভাগ : রাষ্ট্র পরিচালনার মূলনীতি","তৃতীয় ভাগ : মৌলিক অধিকার","চতুর্থ ভাগ : নির্বাহী বিভাগ")
         val myDataSet = parseJson(loadJson())
         viewManager = LinearLayoutManager(this)
         viewAdapter = MyAdapter(myDataSet)
@@ -88,7 +86,7 @@ class ChapterActivity : AppCompatActivity() {
         return json
     }
     private fun loadJson(): String{
-        var json :String = ""
+        var json = ""
         try {
             val input = assets.open("Chapters.Json")
             val size =input.available()
