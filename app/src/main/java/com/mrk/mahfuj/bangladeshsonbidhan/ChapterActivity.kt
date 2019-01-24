@@ -5,6 +5,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 
@@ -40,7 +41,9 @@ class ChapterActivity : AppCompatActivity() {
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
 
+
         }
+
 
 
 
@@ -88,7 +91,7 @@ class ChapterActivity : AppCompatActivity() {
     private fun loadJson(): String{
         var json = ""
         try {
-            val input = assets.open("Chapters.Json")
+            val input = assets.open("Chapters_main.Json")
             val size =input.available()
             val buffer = ByteArray(size)
             input.read(buffer)
@@ -104,12 +107,11 @@ class ChapterActivity : AppCompatActivity() {
     private fun parseJson(value:String): ArrayList<Chapter> {
         val chapterList = ArrayList<Chapter>()
         try {
-            val obj = JSONObject(value)
-            val jsonArray = obj.getJSONArray("Chapters")
 
-
-            for (i in 0 until jsonArray.length()) {
-                val jsonObject = jsonArray.getJSONObject(i)
+            val obj1 = JSONObject(value)
+            val mainChapterArray = obj1.getJSONArray("Bangladesh").getJSONObject(1).getJSONArray("Main_Chapters")
+            for (i in 0 until mainChapterArray.length()) {
+                val jsonObject = mainChapterArray.getJSONObject(i)
                 val chapter = Chapter(jsonObject.getString("Chapter")
                     ,jsonObject.getInt("Chapter_Id")
                     ,jsonObject.getInt("Text_Size")
@@ -120,7 +122,7 @@ class ChapterActivity : AppCompatActivity() {
 
             }
         } catch (e: JSONException) {
-            e.printStackTrace()
+            Log.i("ERROR",e.localizedMessage)
         }
 
 

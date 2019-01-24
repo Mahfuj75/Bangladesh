@@ -2,4 +2,5 @@
     <string name="app_name">Bangladesh Sonbidhan</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_chapter_zero">ChapterZeroActivity</string>
+    <string name="title_activity_laws">LawsActivity</string>
 </resources>
