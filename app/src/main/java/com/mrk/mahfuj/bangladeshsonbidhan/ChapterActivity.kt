@@ -42,7 +42,11 @@ class ChapterActivity : AppCompatActivity() {
             adapter = viewAdapter
 
 
+
+
         }
+
+
 
 
 

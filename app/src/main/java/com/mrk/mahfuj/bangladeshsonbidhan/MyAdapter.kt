@@ -2,6 +2,7 @@ package com.mrk.mahfuj.bangladeshsonbidhan
 
 import android.content.Intent
 import android.graphics.Color
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,17 @@ class MyAdapter(val chapters: ArrayList<Chapter>) : RecyclerView.Adapter<MyAdapt
         init {
             itemView.setOnClickListener()
             {
+                /*val intent =   Intent(itemView.context, LawsActivity::class.java).apply {
+                    putExtra("Key", "Mahfuj")
+
+                }
+                startActivity(itemView.context,intent)
+
+                val blog = Blog("a", 1)*/
+                val intent = Intent(this.itemView.context, LawsActivity::class.java)
+                intent.putExtra("blogData", "Test")
+                startActivity(this.itemView.context,intent,null)
+
             }
 
         }
