@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_marginStart="20dp"
+              android:layout_marginEnd="20dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+	<TextView android:layout_width="25dp"
+	          android:layout_height="wrap_content"
+	          android:fontFamily="sans-serif"
+	          android:textSize="15sp"
+	          android:text="১৷"
+	android:textColor="#a30000"/>
+	<TextView android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:textSize="15sp"
+	          android:textColor="#212121"
+	          android:fontFamily="sans-serif"
+	          android:text="বাংলাদেশ একটি একক, স্বাধীন ও সার্বভৌম প্রজাতন্ত্র, যাহা “গণপ্রজাতন্ত্রী বাংলাদেশ” নামে পরিচিত হইবে৷"/>
+
+</LinearLayout>
