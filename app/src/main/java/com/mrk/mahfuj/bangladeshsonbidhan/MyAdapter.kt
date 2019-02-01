@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import kotlinx.android.synthetic.main.chapter_list_item.view.*
 
 class MyAdapter(val chapters: ArrayList<Chapter>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
@@ -38,6 +37,7 @@ class MyAdapter(val chapters: ArrayList<Chapter>) : RecyclerView.Adapter<MyAdapt
             itemView.TextViewChapterName.text=value.ChapterContent
             itemView.TextViewChapterName.setTextColor(Color.parseColor(value.TextColor))
             itemView.TextViewChapterName.setLines(1)
+            itemView.setTag(R.string.chapter_id,value.ChapterId.toString())
         }
         init {
             itemView.setOnClickListener()
@@ -50,7 +50,8 @@ class MyAdapter(val chapters: ArrayList<Chapter>) : RecyclerView.Adapter<MyAdapt
 
                 val blog = Blog("a", 1)*/
                 val intent = Intent(this.itemView.context, LawsActivity::class.java)
-                intent.putExtra("blogData", "Test")
+                val chapterId:String = itemView.getTag(R.string.chapter_id).toString()
+                intent.putExtra("ChapterId", chapterId)
                 startActivity(this.itemView.context,intent,null)
 
             }

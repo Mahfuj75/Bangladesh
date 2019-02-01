@@ -75,23 +75,6 @@ class ChapterActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    fun loadJSONFromAsset(): String {
-        var json: String? = ""
-        try {
-            val inputStream = assets.open("yourfilename.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-            json = String(buffer)
-        } catch (ex: IOException) {
-            ex.printStackTrace()
-            return json!!
-        }
-
-        return json
-    }
     private fun loadJson(): String{
         var json = ""
         try {

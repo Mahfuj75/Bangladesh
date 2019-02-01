@@ -22,7 +22,7 @@ public class MainChapter {
     @SerializedName("Text_color")
     @Expose
     private String textColor;
-    @SerializedName("Laws")
+    @SerializedName("Law")
     @Expose
     private List<Law> laws = null;
 
